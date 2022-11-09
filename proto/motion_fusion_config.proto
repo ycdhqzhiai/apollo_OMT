@@ -1,0 +1,7 @@
+syntax = "proto2";
+
+package apollo.perception;
+
+message MotionFusionConfig {
+  optional bool use_radar_velocity = 1 [default = false];
+}

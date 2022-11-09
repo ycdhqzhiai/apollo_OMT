@@ -1,0 +1,18 @@
+syntax = "proto2";
+package apollo.hdmap;
+
+message MapRoiPoint {
+  optional double x = 1 [default = nan];  // East from the origin, in meters.
+  optional double y = 2 [default = nan];  // North from the origin, in meters.
+  optional double z = 3 [default = 0.0];  // Up from the WGS-84 ellipsoid, in
+                                          // meters.
+}
+
+message MapRoiPointCloud {
+  repeated MapRoiPoint points = 1;
+}
+
+message MapRoiStruct {
+  repeated MapRoiPointCloud road_polygons = 1;
+  repeated MapRoiPointCloud junction_polygons = 2;
+}
